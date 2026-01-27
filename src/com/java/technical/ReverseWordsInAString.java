@@ -9,6 +9,7 @@ public class ReverseWordsInAString {
 
         String resultReverseString = getReverseWordsString(originalString);
         System.out.println("Result Reverse String = " + resultReverseString);
+        // output : Result Reverse String = I ma gnikrow sa a erawtfos reenigne
     }
 
     private static String getReverseWordsString(String originalString) {
@@ -19,13 +20,15 @@ public class ReverseWordsInAString {
 
         String[] stringArray = originalString.split(" ");
 
-        StringBuilder resultString = new StringBuilder();
-
+        StringBuilder resultBuilder = new StringBuilder();
         for (int i = 0 ; i < stringArray.length ; i++) {
-            resultString.append(new StringBuffer(stringArray[i]).reverse().append(" "));
+            resultBuilder.append(new StringBuffer(stringArray[i]).reverse().append(" "));
         }
+        return resultBuilder.toString();
 
-        return resultString.toString();
+        /*String resultString = Arrays.stream(stringArray)
+                .map(word -> new StringBuffer(word).reverse().toString())
+                .collect(Collectors.joining(" "));
+        return resultString;*/
     }
-
 }
