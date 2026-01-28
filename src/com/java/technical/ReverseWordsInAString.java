@@ -1,6 +1,9 @@
 package com.java.technical;
 
 
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
 public class ReverseWordsInAString {
 
     public static void main(String args[]) {
@@ -21,14 +24,15 @@ public class ReverseWordsInAString {
         String[] stringArray = originalString.split(" ");
 
         StringBuilder resultBuilder = new StringBuilder();
-        for (int i = 0 ; i < stringArray.length ; i++) {
+
+        /*for (int i = 0 ; i < stringArray.length ; i++) {
             resultBuilder.append(new StringBuffer(stringArray[i]).reverse().append(" "));
         }
-        return resultBuilder.toString();
+        return resultBuilder.toString();*/
 
-        /*String resultString = Arrays.stream(stringArray)
+        String resultString = Arrays.stream(stringArray)
                 .map(word -> new StringBuffer(word).reverse().toString())
                 .collect(Collectors.joining(" "));
-        return resultString;*/
+        return resultString;
     }
 }
