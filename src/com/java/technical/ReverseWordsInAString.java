@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 
 public class ReverseWordsInAString {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
 
         String originalString = "I am working as a software engineer";
 
@@ -30,9 +30,8 @@ public class ReverseWordsInAString {
         }
         return resultBuilder.toString();*/
 
-        String resultString = Arrays.stream(stringArray)
+        return Arrays.stream(stringArray)
                 .map(word -> new StringBuffer(word).reverse().toString())
                 .collect(Collectors.joining(" "));
-        return resultString;
     }
 }

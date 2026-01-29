@@ -2,10 +2,10 @@ package com.java.technical;
 
 public class FindFirstNonRepeatingCharacter {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         //String input = "cccbbdaabcbbccddeff";                    // result d;
-        String input = "cccbbddaagcbbccddeff";                    // result g;
-        //String input = "cbdaabcbbccddeff";                    // result c;
+        //String input = "cccbbddaagcbbccddeff";                    // result g;
+        String input = "cbdaabcbbccddeff";                    // result c;
 
         if (input == null || input.isBlank()) {
             System.out.println("Input length is null or empty");
@@ -28,14 +28,15 @@ public class FindFirstNonRepeatingCharacter {
             if (newChar == null) {
                 newChar = input.charAt(i);              // assign the first character to newChar
             } else {
+                // cccbbddaagcbbccddeff
                 Character nextChar = input.charAt(i);   // Get Next character
                 if (nextChar.equals(newChar)) {         // If equal, all good and no change in newChar
                     isCharChanged = false;
-                } else if (!newChar.equals(nextChar) && !isCharChanged) {
+                } else if (!isCharChanged) {
 
                     // If first two characters are not same, which means first letter is not repeating character
                     if (i == 1) {
-                        resultChar = newChar.charValue();
+                        resultChar = newChar;
                         break;
                     }
 
@@ -44,9 +45,9 @@ public class FindFirstNonRepeatingCharacter {
                     newChar = nextChar;
                     isCharChanged = true;
                     System.out.println("newChar Character changed to = " + newChar);
-                } else if (!newChar.equals(nextChar) && isCharChanged) {
-                    // If newChar and nextChar ane not equal and flag is true, then read the newChar and break the loop.
-                    resultChar = newChar.charValue();
+                } else {
+                    // If newChar and nextChar ane not equal and isCharChanged = true, then read the newChar and break the loop.
+                    resultChar = newChar;
                     break;
                 }
             }
