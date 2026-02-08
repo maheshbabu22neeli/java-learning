@@ -47,7 +47,7 @@ public class FindCompanyRevenueNeverFallsDebt {
         //System.out.println(sol.solution(A1)); // 1
 
         int[] A1 = {-1, -1, -1, 1, 10, 3, -1};
-        System.out.println(sol.solution(A1)); // 1
+        System.out.println(sol.solution(A1)); // 3
 
     }
 
