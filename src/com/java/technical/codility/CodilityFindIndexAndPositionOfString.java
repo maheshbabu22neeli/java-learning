@@ -1,4 +1,4 @@
-package com.java.technical;
+package com.java.technical.codility;
 
 import java.util.*;
 
