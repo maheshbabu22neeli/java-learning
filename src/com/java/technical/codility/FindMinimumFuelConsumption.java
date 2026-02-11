@@ -35,7 +35,7 @@ public class FindMinimumFuelConsumption {
             roads.get(B[i]).add(A[i]);
         }
 
-        System.out.println();
+        System.out.println("Roads " + roads);
 
         // assuming that there is no parent, hence started with -1
         findParentAndChildPaths(0, -1);
